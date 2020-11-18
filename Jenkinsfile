@@ -1,6 +1,6 @@
 node {
     stage ('GIT CheckOut') {
-        git 'https://github.com/VamsiTechTuts/javaprojrepo.git'
+        git 'https://github.com/nwanki/javaprojrepo.git'
     }
     stage ('Build Artifact') {
         dir('demoweb') {
