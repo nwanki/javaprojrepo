@@ -4,7 +4,7 @@ node {
     }
     stage ('Build Artifact') {
         dir('demoweb') {
-            def MAVEN_HOME = tool name: 'maven3', type: 'maven'
+            def MAVEN_HOME = tool name: 'maven-3', type: 'maven'
             def MAVEN_CMD = "${MAVEN_HOME}/bin/mvn"
             sh "${MAVEN_CMD} clean package"
         }
