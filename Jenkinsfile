@@ -15,7 +15,7 @@ node {
         }
     }
     stage("Docker Push") {
-        withVault(configuration: [timeout: 60, vaultCredentialId: 'vault-token', vaultUrl: 'http://3.135.193.168:8200'], vaultSecrets: [[path: 'mycred/dockerhub', secretValues: [[vaultKey: 'username'], [vaultKey: 'password']]]]) {
+        withVault(configuration: [timeout: 60, vaultCredentialId: 'vault-token', vaultUrl: 'http://3.135.193.168:8200'], vaultSecrets: [[path: 'kv/dockerhub', secretValues: [[vaultKey: 'username'], [vaultKey: 'password']]]]) {
             sh 'docker login -u $username -p $password'
         }
         sh 'docker push wankineba/demoweb'
